@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: Myself-Passbook
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/merchants?characterEncoding=utf-8&useSSL=false
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    consumer:
+      group-id: passbook
+    listener:
+      concurrency: 4
+  data:
+    hbase:
+      quorum: 127.0.0.1:2181
+      rootDir: file:///**
+      nodeParent: /hbase
+  redis:
+    host: 127.0.0.1
+    port: 6379
+server:
+  port: 9528
+logging:
+  file: myself-passbook.log
+  level: debug
+
